@@ -19,11 +19,16 @@ class CalculadoraFinanceira:
     def calcular_juros_simples(self):
         """Calcula o montante com base em juros simples"""
         juros_simples = self.capital * self.taxa_juros * self.periodo
-        montante = self.capital + juros_simples
+        montante = self.calcula_montante(juros_simples)
         return montante, juros_simples
 
     def calcular_juros_compostos(self):
         """Calcula o montante com base em juros compostos"""
         juros_compostos = self.capital * pow(1 + self.taxa_juros, self.periodo)
-        montante_resultante = self.capital + juros_compostos
+        montante_resultante = self.calcula_montante(juros_compostos)
         return montante_resultante, juros_compostos
+    
+    def calcula_montante(self, juros_calculados):
+        """Calcula o montante com base no capital inicial, taxa de juros e periodo"""
+        return self.capital + juros_calculados
+        
