@@ -1,7 +1,6 @@
-"""Testes"""
 from unittest import TestCase
 
-from calculator import CalculadoraFinanceira
+from ..app.calculator import CalculadoraFinanceira
 
 
 class CalculadoraTest(TestCase):
